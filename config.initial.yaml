@@ -1,0 +1,42 @@
+access:
+  api-keys:
+    - "__CLIPROXY_API_KEY__"
+config-version: 8
+management:
+  allow-remote: true
+oauth:
+  auth-dir: /data/auths
+  providers:
+    aistudio:
+      ws-auth: true
+observability:
+  logs:
+    debug: false
+    logging-to-file: true
+    request-log: true
+requests:
+  passthrough-headers: true
+  streaming:
+    bootstrap-retries: 1
+    keepalive-seconds: 15
+  tls-handshake-timeout-seconds: 15
+routing:
+  cooldown:
+    save-cooldown-status: true
+  retry:
+    max-retry-credentials: 0
+    max-retry-interval: 30
+    request-retry: 3
+  session-affinity: true
+  session-affinity-rebind-on: quota
+  session-affinity-subagents: true
+  session-affinity-ttl: 24h
+  strategy: round-robin
+server:
+  commercial-mode: true
+  host: 0.0.0.0
+  port: __PORT__
+upstream:
+  codex:
+    stream-bootstrap-buffering: true
+    stream-bootstrap-timeout: 20s
