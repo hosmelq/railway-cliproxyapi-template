@@ -1,4 +1,4 @@
-FROM eceasy/cli-proxy-api:latest
+FROM eceasy/cli-proxy-api:latest@sha256:362e7ac699a0f2608d7c55f8f8cb764e5afbfe4ed22aadc26fcb147eecbf2a03
 
 ENV PORT=8317
 
